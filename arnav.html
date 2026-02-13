@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Will You Be My Valentine? 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      overflow: hidden;
+    }
+
+    h1 {
+      margin-top: 80px;
+      font-size: 40px;
+      color: white;
+    }
+
+    #gif {
+      width: 300px;
+      margin: 20px auto;
+      display: block;
+      border-radius: 20px;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 20px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.2s;
+      margin: 10px;
+    }
+
+    #yesBtn {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: white;
+      color: #ff4d6d;
+      position: absolute;
+    }
+
+    #message {
+      font-size: 30px;
+      color: white;
+      margin-top: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Will you be my Valentine? 🥺💘</h1>
+
+<img id="gif" src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
+
+<div class="buttons">
+  <button id="yesBtn">Yes 💖</button>
+  <button id="noBtn">No 🙈</button>
+</div>
+
+<div id="message">YAYYYY!!! 💕🎉 You just made me the happiest person alive!!!</div>
+
+<script>
+  const noBtn = document.getElementById("noBtn");
+  const yesBtn = document.getElementById("yesBtn");
+  const gif = document.getElementById("gif");
+  const message = document.getElementById("message");
+
+  // Make NO button jump away
+  noBtn.addEventListener("mouseover", function() {
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 50);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+  });
+
+  // When YES is clicked
+  yesBtn.addEventListener("click", function() {
+    gif.src = "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"; // Celebration GIF
+    message.style.display = "block";
+    noBtn.style.display = "none";
+    yesBtn.style.display = "none";
+  });
+</script>
+
+</body>
+</html>
